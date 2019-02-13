@@ -214,7 +214,7 @@ function render() {
             positions[i + 1] = (Math.sin((ix + count) * 0.3) * ampl) +
                 (Math.sin((iy + count) * 0.5) * ampl);
 
-            h = (positions[i + 1] + ampl) / (2*ampl);
+            h = 1-(positions[i + 1] + ampl) / (3*ampl);
             s = 1.0;
             
             l = ( positions[i+2] + maxSizeY ) / (3 * maxSizeY );

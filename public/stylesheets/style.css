@@ -13,7 +13,7 @@ a {
   color:#0078ff;
 }
 
-.back {
+.background {
 	position: absolute;
     width: 100%;
     height: 95%;
@@ -29,9 +29,8 @@ a {
 }
 
 .card-profile {
-  width: 340px;
-  height: 350px;
-  margin: 100px auto;
+  width: 100%;
+  height: 100%;
   background-color: #e6e5e1;
   border-radius: 20;
   border: 0;
@@ -47,17 +46,21 @@ a {
   margin-bottom: 10px;
   border: 5px solid #e6e5e1;
 }
-.card-profile .card-title {
-  margin-bottom: 50px;
+.card-links {
+  position: absolute;
+  top: 410px;
+  width: 100%;
+  background: transparent;
 }
+
 .card-profile .card-title small {
   display: block;
   font-size: 0.6em;
   margin-top: 0.2em;
 }
-.card-profile .card-links {
-  margin-bottom: 25px;
-}
+/* .card-profile .card-links {
+   margin-bottom: 25px; 
+} */
 .card-profile .card-links .fa {
   margin: 0 0.5em;
   font-size: 2.0em;
@@ -113,4 +116,54 @@ a {
 }
 .card-profile .card-links .fa.fa-envelope:hover {
   color: #8f1515;
+}
+
+
+.card-profile .card-links .fa.arrow{
+  color: #ffffff;
+}
+.card-profile .card-links .fa.arrow:hover {
+  color: #cccfff;
+}
+
+.flip-card {
+  width: 340px;
+  height: 400px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  margin: 0px auto;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  height: 100%;
+  
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+} */
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #e6e5e1;
+  transform: rotateY(180deg);
 }

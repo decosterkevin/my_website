@@ -15,24 +15,44 @@
   <script src="javascripts/dist/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
   <script src="javascripts/dist/popper.min.js" crossorigin="anonymous"></script>
   <script src="javascripts/dist/bootstrap.min.js" crossorigin="anonymous"></script>
-  <div id="back" class="back"></div>
-  <div class="card card-profile text-center animated slideInDown slow">
-    <img class="card-img-top" src="images/blockchain_small.jpeg" />
-    <div class="card-block">
-      <img class="card-img-profile" src="images/kevin_2.jpg?size=80" />
-      <h4 class="card-title">
-        Kevin Decoster
-        <small>DevOps & Blockchain Analyst at </small>
-        <small> <a href="https://atonra.ch">Atonra Partners SA</a></small>
-      </h4>
-      <div class="card-links">
-        <a class="fa fa-linkedin" href="https://www.linkedin.com/in/kevin-decoster"></a>
-        <a class="fa fa-gitlab" href="https://gitlab.com/decosterkevin"></a>
-        <a class="fa fa-github" href="https://github.com/decosterkevin"></a>
-        <a class="fa fa-medium" href="https://medium.com/@decoster.kevin"></a>
-        <a class="fa fa-envelope" href="mailto:kevin@decoster.io"></a>
+  <div id="back" class="background"></div>
+  <div class="flip-card animated slideInDown slow" id="main-card">
+    <div class="flip-card-inner" id="flip-card">
+      <div class=" flip-card-front card card-profile text-center" id="flip-card-front">
+        <img class="card-img-top" src="images/blockchain_small.jpeg"/>
+        <div class="card-block">
+          <img class="card-img-profile" src="images/kevin_2.jpg?size=80" id="img-top"/>
+          <h4 class="card-title">
+            Kevin Decoster
+            <small>DevOps & Blockchain Analyst at </small>
+            <small> <a href="https://atonra.ch">Atonra Partners SA</a></small>
+            <p></p>
+            <a class="btn btn-primary flip-btn" id="read_more">My services</h5></a>
+          </h4>
+          <div class="card-links">
+            <a class="fa fa-linkedin" href="https://www.linkedin.com/in/kevin-decoster"></a>
+            <a class="fa fa-gitlab" href="https://gitlab.com/decosterkevin"></a>
+            <a class="fa arrow fa-arrow-up" id="arrow-slide"></a>
+            <a class="fa fa-github" href="https://github.com/decosterkevin"></a>
+            <a class="fa fa-medium" href="https://medium.com/@decoster.kevin"></a>
+            <!-- <a class="fa fa-envelope" href="mailto:kevin@decoster.io"></a> -->
+          </div>
+
+        </div>
+      </div>
+
+      <div class="flip-card-back card text-center" id="flip-card-back">
+        <div class="card-body">
+            <button type="button" class="close" id="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          <h5 class="card-title">My services</h5>
+          <p class="card-text">Here is my self hosted services (In construction):</p>
+          <a href="https://transfer.decoster.io">File Transfer</a>
+        </div>
       </div>
     </div>
+  </div>
   </div>
 
 
@@ -70,8 +90,36 @@
 			}
 
 		</script>
-
+  <script>
+    window.onload = function() {
+    document.getElementById("read_more").onclick = function () {
+      document.getElementById("flip-card").style.transform= "rotateY(180deg)";
+    }
+    document.getElementById("arrow-slide").onclick = function () {
+      var arrow = document.getElementById("arrow-slide")
+      var classes = arrow.className.split(" ")
+      if (classes.indexOf("fa-arrow-up") > -1) {
+        console.log("Top is there, so sliding up")
+        arrow.classList.remove('fa-arrow-up')
+        arrow.classList.add('fa-arrow-down')
+        document.getElementById("flip-card").style.transform= "translateY(-500px)";
+      }
+      else {
+        console.log("Down is there, so sliding down")
+        arrow.classList.remove('fa-arrow-down')
+        arrow.classList.add('fa-arrow-up')
+        document.getElementById("flip-card").style.transform= "translateY(0px)";
+      }
+      
+    }
+    document.getElementById("close").onclick = function () {
+      console.log("sdkjb")
+      document.getElementById("flip-card").style.transform= "rotateY(0deg)";
+    }
+  }
+  </script>
   <script src="javascripts/waves.js" type="text/javascript"></script>
+
 </body>
 
 </html>
