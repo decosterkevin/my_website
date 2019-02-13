@@ -41,6 +41,10 @@ app.use(function(err, req, res, next) {
 app.get('/favicon.ico', (req, res) => {
   res.sendFile("public/favicon.ico");
 });
+
+app.get('/google5f710fe1bbfe7512.html', (req, res) => {
+  res.sendFile("google5f710fe1bbfe7512.html");
+});
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
