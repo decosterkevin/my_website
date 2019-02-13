@@ -94,10 +94,10 @@ a {
   color: #2d4474;
 }
 .card-profile .card-links .fa.fa-github {
-  color: #fafafa;
+  color: #6e5494;
 }
 .card-profile .card-links .fa.fa-github:hover {
-  color: #cccccc;
+  color: #483663;
 }
 .card-profile .card-links .fa.fa-gitlab {
   color: #fca326;
@@ -120,10 +120,10 @@ a {
 
 
 .card-profile .card-links .fa.arrow{
-  color: #ffffff;
+  color: #e6e5e1;
 }
 .card-profile .card-links .fa.arrow:hover {
-  color: #cccfff;
+  color: #c5c4c1;
 }
 
 .flip-card {
